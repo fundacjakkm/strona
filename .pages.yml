@@ -1,0 +1,138 @@
+media:
+  - name: zdjecia
+    label: Zdjęcia
+    input: szablon/img
+    output: /img
+    extensions: [jpg, jpeg, png, webp]
+  - name: dokumenty
+    label: Dokumenty
+    input: szablon/dokumenty
+    output: /dokumenty
+    extensions: [pdf, doc, docx, xls, xlsx]
+
+content:
+  - name: strona
+    label: Treść strony
+    type: file
+    path: dane/strona.json
+    format: json
+    fields:
+      - name: karetka
+        label: Zbiórka – karetka neonatologiczna
+        type: object
+        fields:
+          - { name: tytul, label: Tytuł, type: string }
+          - { name: opis, label: Opis, type: text }
+          - { name: cel, label: "Cel zbiórki (np. 1 922 000 zł)", type: string }
+          - { name: komunikat, label: "Komunikat pod kwotą (np. Zebraliśmy już 12 500 zł – dziękujemy!)", type: string }
+          - { name: netto, label: Dopisek pod sumą w wycenie, type: string }
+          - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
+          - { name: opis_zdjecia, label: "Opis zdjęcia (dla niewidomych i Google)", type: string }
+          - name: kosztorys
+            label: Kosztorys – grupy
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nazwa} – {suma}"
+            fields:
+              - { name: nazwa, label: Nazwa grupy, type: string }
+              - { name: suma, label: Suma grupy, type: string }
+              - name: pozycje
+                label: Pozycje
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{nazwa} – {kwota}"
+                fields:
+                  - { name: nazwa, label: Nazwa, type: string }
+                  - { name: kwota, label: Kwota, type: string }
+          - { name: cechy, label: Cechy karetki (etykiety), type: string, list: true }
+
+      - name: wplaty
+        label: Okienko wpłat (u góry strony)
+        type: object
+        fields:
+          - { name: opis, label: Zdanie pod nagłówkiem, type: string }
+          - name: kwoty
+            label: Kwoty i co za nie kupimy
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{kwota} zł – {opis}"
+            fields:
+              - { name: kwota, label: Kwota (zł), type: number }
+              - { name: opis, label: Co za tę kwotę kupimy, type: string }
+
+      - name: potrzeby
+        label: Czego potrzebujemy
+        type: object
+        fields:
+          - { name: wstep, label: Tekst wprowadzający, type: text }
+          - name: karty
+            label: Karty potrzeb
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{tytul}"
+            fields:
+              - { name: tytul, label: Tytuł, type: string }
+              - { name: zdjecie, label: "Zdjęcie (puste = ikona)", type: image, options: { media: zdjecia } }
+              - { name: opis_zdjecia, label: Opis zdjęcia, type: string }
+              - { name: zdjecie_w_calosci, label: "Pokaż zdjęcie w całości, bez przycinania (np. zdjęcie produktu)", type: boolean }
+              - { name: pozycje, label: Lista, type: string, list: true }
+
+      - name: szkolenia
+        label: Szkolenia
+        type: object
+        fields:
+          - { name: tytul, label: Tytuł, type: string }
+          - { name: opis, label: Opis, type: text }
+          - { name: grupy, label: Dla kogo (etykiety), type: string, list: true }
+          - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
+          - { name: opis_zdjecia, label: Opis zdjęcia, type: string }
+
+      - name: firmy
+        label: Dla firm
+        type: object
+        fields:
+          - { name: tytul, label: Tytuł, type: string }
+          - { name: opis, label: Opis, type: text }
+          - { name: lista, label: Najczęściej potrzebne, type: string, list: true }
+
+      - name: zespol
+        label: Zespół
+        type: object
+        fields:
+          - { name: imie, label: Imię i nazwisko, type: string }
+          - { name: funkcja, label: Funkcja, type: string }
+          - { name: opis, label: Opis, type: text }
+          - { name: umiejetnosci, label: Kwalifikacje (etykiety), type: string, list: true }
+          - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
+          - { name: opis_zdjecia, label: Opis zdjęcia, type: string }
+
+      - name: dokumenty
+        label: Dokumenty fundacji
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nazwa}"
+        fields:
+          - { name: nazwa, label: Nazwa, type: string }
+          - { name: etykieta, label: "Etykieta po prawej (np. PDF ↓)", type: string }
+          - { name: plik, label: "Plik do pobrania (jeśli jest)", type: file, options: { media: dokumenty } }
+          - { name: link, label: "Albo link (jeśli brak pliku)", type: string }
+
+      - name: kontakt
+        label: Dane kontaktowe i konto
+        type: object
+        fields:
+          - { name: telefon, label: "Telefon (np. 573 396 184)", type: string }
+          - { name: email, label: E-mail, type: string }
+          - { name: konto, label: Numer konta (ze spacjami), type: string }
+          - { name: adres_ulica, label: Adres – ulica, type: string }
+          - { name: adres_miasto, label: Adres – kod i miasto, type: string }

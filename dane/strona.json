@@ -1,0 +1,301 @@
+{
+  "wplaty": {
+    "kwoty": [
+      {
+        "kwota": 30,
+        "opis": "[np. zestaw opatrunków]"
+      },
+      {
+        "kwota": 50,
+        "opis": "[np. materiały na szkolenie w szkole]"
+      },
+      {
+        "kwota": 100,
+        "opis": "[np. wyposażenie plecaka]"
+      },
+      {
+        "kwota": 250,
+        "opis": "[np. część sprzętu do resuscytacji]"
+      }
+    ],
+    "opis": "Każda wpłata idzie na sprzęt ratowniczy i szkolenia."
+  },
+  "potrzeby": {
+    "wstep": "Jesteśmy na starcie. Oto lista, od której zaczynamy – możesz wesprzeć wpłatą albo przekazać konkretny sprzęt.",
+    "karty": [
+      {
+        "tytul": "Pojazdy ratownicze",
+        "zdjecie": "",
+        "opis_zdjecia": "",
+        "zdjecie_w_calosci": false,
+        "pozycje": [
+          "Specjalistyczna karetka kontenerowa",
+          "Ciężka karetka do terenów trudno dostępnych",
+          "Quad do ratownictwa w trudnym terenie",
+          "Samochód do ratownictwa wysokościowego i nurkowego",
+          "Samochód techniczny"
+        ]
+      },
+      {
+        "tytul": "Ratownictwo wodne",
+        "zdjecie": "/img/lodz-ratownicza.jpg",
+        "opis_zdjecia": "Ratownik na łodzi ratowniczej podczas działań na wodzie",
+        "zdjecie_w_calosci": false,
+        "pozycje": [
+          "Specjalistyczny skuter do ratownictwa wodnego",
+          "Samochód techniczny ratownictwa wodnego"
+        ]
+      },
+      {
+        "tytul": "Sprzęt do resuscytacji",
+        "zdjecie": "/img/lucas-corpuls.jpg",
+        "opis_zdjecia": "Urządzenie LUCAS, monitor Corpuls i respirator transportowy",
+        "zdjecie_w_calosci": true,
+        "pozycje": [
+          "LUCAS – urządzenie do uciskania klatki piersiowej",
+          "Monitor Corpuls do resuscytacji",
+          "Respirator tlenowy",
+          "Defibrylatory AED"
+        ]
+      },
+      {
+        "tytul": "Plecaki ratownicze",
+        "zdjecie": "/img/plecak-ratowniczy.jpg",
+        "opis_zdjecia": "Czerwony plecak ratowniczy z pełnym wyposażeniem medycznym",
+        "zdjecie_w_calosci": true,
+        "pozycje": [
+          "Plecaki i torby specjalistyczne",
+          "Zestawy tlenowe",
+          "Wyposażenie do zabezpieczania urazów",
+          "Materiały jednorazowego użytku"
+        ]
+      },
+      {
+        "tytul": "Sprzęt szkoleniowy",
+        "zdjecie": "/img/fantom.jpg",
+        "opis_zdjecia": "Fantom do nauki resuscytacji",
+        "zdjecie_w_calosci": false,
+        "pozycje": [
+          "Fantomy do nauki resuscytacji",
+          "Przekroje i manekiny do szkoleń",
+          "Materiały do zajęć w szkołach i przedszkolach"
+        ]
+      }
+    ]
+  },
+  "karetka": {
+    "zdjecie": "/img/akcja-smiglowiec.jpg",
+    "opis_zdjecia": "Ratownicy medyczni przy śmigłowcu ratunkowym podczas akcji",
+    "tytul": "Karetka neonatologiczna dla dzieci",
+    "opis": "Karetka kontenerowa na podwoziu Mercedes-Benz Sprinter z inkubatorem transportowym, dwoma respiratorami i telemedycyną – do bezpiecznego przewozu wcześniaków, noworodków i dzieci.",
+    "cel": "1 922 000 zł",
+    "komunikat": "Zbiórka rusza razem ze stroną – bądź wśród pierwszych darczyńców.",
+    "netto": "ok. 1 562 602 zł netto · wycena szacunkowa",
+    "kosztorys": [
+      {
+        "nazwa": "Pojazd i zabudowa",
+        "suma": "767 000 zł",
+        "pozycje": [
+          {
+            "nazwa": "Mercedes-Benz Sprinter 317 CDI (kat. B)",
+            "kwota": "265 000 zł"
+          },
+          {
+            "nazwa": "Zabudowa kontenerowa medyczna",
+            "kwota": "245 000 zł"
+          },
+          {
+            "nazwa": "Mocowanie i elektryczny załadunek inkubatora",
+            "kwota": "90 000 zł"
+          },
+          {
+            "nazwa": "Instalacja elektryczna 230 V / 12 V, UPS",
+            "kwota": "55 000 zł"
+          },
+          {
+            "nazwa": "Klimatyzacja, ogrzewanie, kontrola wilgotności",
+            "kwota": "48 000 zł"
+          },
+          {
+            "nazwa": "Oświetlenie ostrzegawcze LED",
+            "kwota": "38 000 zł"
+          },
+          {
+            "nazwa": "Oklejenie i oznakowanie",
+            "kwota": "14 000 zł"
+          },
+          {
+            "nazwa": "Sygnalizacja dźwiękowa",
+            "kwota": "12 000 zł"
+          }
+        ]
+      },
+      {
+        "nazwa": "Wyposażenie medyczne",
+        "suma": "1 065 000 zł",
+        "pozycje": [
+          {
+            "nazwa": "Inkubator transportowy (klasa premium)",
+            "kwota": "320 000 zł"
+          },
+          {
+            "nazwa": "2 respiratory transportowe (neonatalne / pediatryczne)",
+            "kwota": "240 000 zł"
+          },
+          {
+            "nazwa": "Przenośne USG",
+            "kwota": "120 000 zł"
+          },
+          {
+            "nazwa": "Defibrylator z trybem pediatrycznym",
+            "kwota": "95 000 zł"
+          },
+          {
+            "nazwa": "Monitor wieloparametrowy",
+            "kwota": "75 000 zł"
+          },
+          {
+            "nazwa": "4 pompy infuzyjne ze stacją dokującą",
+            "kwota": "60 000 zł"
+          },
+          {
+            "nazwa": "System tlenowy i sprężonego powietrza",
+            "kwota": "32 000 zł"
+          },
+          {
+            "nazwa": "Zestawy do wentylacji i intubacji",
+            "kwota": "30 000 zł"
+          },
+          {
+            "nazwa": "System ogrzewania pacjenta",
+            "kwota": "28 000 zł"
+          },
+          {
+            "nazwa": "Leki, materiały – pakiet startowy",
+            "kwota": "25 000 zł"
+          },
+          {
+            "nazwa": "Monitorowanie inwazyjne i diagnostyka",
+            "kwota": "22 000 zł"
+          },
+          {
+            "nazwa": "Ssak elektryczny",
+            "kwota": "18 000 zł"
+          }
+        ]
+      },
+      {
+        "nazwa": "Wyposażenie dodatkowe",
+        "suma": "90 000 zł",
+        "pozycje": [
+          {
+            "nazwa": "Telemedycyna – transmisja EKG/USG do szpitala",
+            "kwota": "35 000 zł"
+          },
+          {
+            "nazwa": "Szafy medyczne, zestawy pediatryczne, ŚOI",
+            "kwota": "18 000 zł"
+          },
+          {
+            "nazwa": "Zasilanie rezerwowe (akumulatory LiFePO4)",
+            "kwota": "16 000 zł"
+          },
+          {
+            "nazwa": "Lodówka medyczna",
+            "kwota": "12 000 zł"
+          },
+          {
+            "nazwa": "Kamera wnętrza 360° i rejestracja zdarzeń",
+            "kwota": "9 000 zł"
+          }
+        ]
+      }
+    ],
+    "cechy": [
+      "Transport wcześniaków, noworodków i dzieci",
+      "Dwa niezależne respiratory",
+      "Telemedycyna – EKG/USG do szpitala",
+      "Lekki kontener – prawo jazdy kat. B",
+      "Zgodność z normą PN-EN 1789",
+      "3–4 miejsca: kierowca i zespół medyczny"
+    ]
+  },
+  "szkolenia": {
+    "tytul": "Pierwsza pomoc od przedszkola",
+    "opis": "Prowadzimy kursy pierwszej pomocy i kwalifikowanej pierwszej pomocy (KPP), szkolenia z ratownictwa specjalistycznego i zarządzania kryzysowego. Ćwiczymy w realnych warunkach – w mieście, w lesie i na wodzie. Najbardziej zależy nam na dzieciach i młodzieży. Koszt szkolenia ustalamy indywidualnie – w formie wpłaty na cele fundacji.",
+    "zdjecie": "/img/szkolenia-akcja.jpg",
+    "opis_zdjecia": "Ratownicy medyczni udzielają pomocy poszkodowanemu na pomoście przy łodzi ratowniczej",
+    "grupy": [
+      "Szkoły i przedszkola",
+      "Pracownicy firm",
+      "Funkcjonariusze służb",
+      "KPP i ratownictwo specjalistyczne",
+      "Pokazy i zawody ratownicze"
+    ]
+  },
+  "firmy": {
+    "tytul": "Przekaż sprzęt albo środki na jego zakup",
+    "opis": "Sprzęt wybierzemy razem z Państwem z listy naszych potrzeb. O udzielonym wsparciu poinformujemy w naszych materiałach i mediach społecznościowych – zgodnie z Państwa preferencjami.",
+    "lista": [
+      "Plecaki i torby ratownicze",
+      "Defibrylatory AED",
+      "Sprzęt do resuscytacji",
+      "Zestawy tlenowe",
+      "Sprzęt do unieruchamiania i transportu",
+      "Deski ortopedyczne i nosze",
+      "Zabezpieczanie urazów",
+      "Środki ochrony indywidualnej",
+      "Sprzęt szkoleniowy i fantomy",
+      "Materiały jednorazowego użytku"
+    ]
+  },
+  "zespol": {
+    "zdjecie": "/img/tomasz-margalski.jpg",
+    "opis_zdjecia": "Tomasz Margalski, ratownik medyczny",
+    "imie": "Tomasz Margalski",
+    "funkcja": "Fundator i Prezes Zarządu",
+    "opis": "Ratownik medyczny z codziennym doświadczeniem w pogotowiu – na stacji w Pruszkowie, a latem w obsadzie karetki wodnej w Zegrzu. Od ponad 20 lat sportowiec. Fundację tworzy razem z Grupą Specjalną Ratowników Medycznych.",
+    "umiejetnosci": [
+      "Ratownik medyczny",
+      "Ratownik wodny",
+      "Płetwonurek",
+      "Sternik z patentem",
+      "Instruktor wspinaczki",
+      "Instruktor samoobrony",
+      "Instruktor strzelania"
+    ]
+  },
+  "dokumenty": [
+    {
+      "nazwa": "Statut Fundacji KONOR-KŁAD-MEDYK",
+      "etykieta": "PDF ↓",
+      "link": "dokumenty/statut-fundacji-konor-klad-medyk.pdf",
+      "plik": ""
+    },
+    {
+      "nazwa": "Wycena karetki neonatologicznej",
+      "etykieta": "Zobacz ↑",
+      "link": "#wycena",
+      "plik": ""
+    },
+    {
+      "nazwa": "Wpis w KRS 0001254244",
+      "etykieta": "Sprawdź ↗",
+      "link": "https://wyszukiwarka-krs.ms.gov.pl/",
+      "plik": ""
+    },
+    {
+      "nazwa": "Pierwsze sprawozdanie – za rok 2026",
+      "etykieta": "Wkrótce",
+      "link": "#przejrzystosc",
+      "plik": ""
+    }
+  ],
+  "kontakt": {
+    "telefon": "573 396 184",
+    "email": "kontakt@fundacjakkm.pl",
+    "konto": "55 1140 2004 0000 3102 8688 2353",
+    "adres_ulica": "ul. Lazurowa 181 lok. 15",
+    "adres_miasto": "01-479 Warszawa"
+  }
+}

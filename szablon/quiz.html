@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz z pierwszej pomocy – Fundacja KONOR-KŁAD-MEDYK</title>
+<meta name="description" content="Sprawdź, czy wiesz, jak pomóc w nagłym wypadku. Quiz z pierwszej pomocy dla dzieci, dorosłych, firm i nauczycieli.">
+<link rel="canonical" href="https://fundacjakkm.pl/quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fundacjakkm.pl/quiz.html">
+<meta property="og:title" content="Quiz z pierwszej pomocy – Fundacja Konor-Kład-Medyk">
+<meta property="og:description" content="Sprawdź, czy wiesz, jak pomóc w nagłym wypadku. Quiz dla dzieci, dorosłych, firm i nauczycieli.">
+<meta property="og:image" content="https://fundacjakkm.pl/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<style>@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/Barlow-Regular.woff2) format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/Barlow-Medium.woff2) format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/Barlow-SemiBold.woff2) format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/Barlow-Bold.woff2) format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/BarlowCondensed-SemiBold.woff2) format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/BarlowCondensed-Bold.woff2) format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/BarlowCondensed-ExtraBold.woff2) format('woff2')}</style>
+<style>
+:root{--ink:#101215;--red:#D41F2B;--yel:#FFD21F;--paper:#F4F3EF;--muted:#3F454D;--line:#DEDDD8;--ok:#1E7A46;--okbg:#E5F4EA;--bad:#B3121C;--badbg:#FCE9EA}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Barlow',system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(16,18,21,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid #23272D}
+.nav{max-width:1280px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+.nav img{height:40px;display:block}
+.links{display:flex;gap:24px;font-size:15px;font-weight:600}
+.links a[aria-current]{color:var(--yel)}
+.cta{font-size:14px;font-weight:700;padding:11px 18px;border-radius:10px;background:var(--red);color:#fff}
+.burger{display:none;width:44px;height:44px;border-radius:10px;border:1px solid #3A4048;background:transparent;color:#fff;cursor:pointer;align-items:center;justify-content:center}
+@media (max-width:1000px){
+ .burger{display:inline-flex}
+ .links{display:none;position:absolute;left:0;right:0;top:100%;background:#101215;flex-direction:column;gap:0;padding:8px 24px 20px;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+ .links a{padding:14px 0;border-bottom:1px solid #23272D;font-size:17px}
+ header.open .links{display:flex}
+ .cta{margin-left:auto}
+}
+.hero{background:var(--ink);color:#fff}
+.hero-in{max-width:1080px;margin:0 auto;padding:64px 24px 72px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yel)}
+h1{margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(46px,7vw,92px);line-height:.92;text-transform:uppercase;max-width:900px}
+.hero p.lead{margin:0;font-size:19px;line-height:1.6;color:#D3D7DD;max-width:640px}
+main{max-width:1080px;margin:0 auto;padding:0 24px 88px}
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:-40px}
+.level{all:unset;cursor:pointer;background:#fff;border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;box-shadow:0 14px 40px rgba(16,18,21,.10);transition:transform .25s,box-shadow .25s;border-top:6px solid var(--red)}
+.level:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(16,18,21,.16)}
+.level:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.level.kids{border-top-color:var(--yel)}
+.level.pro{border-top-color:#8F959D}
+.level .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:6px;background:var(--paper)}
+.level h2{margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:36px;text-transform:uppercase}
+.level p{margin:0;color:var(--muted);line-height:1.55}
+.level .go{margin-top:8px;font-weight:700;color:var(--red)}
+.quiz{display:none;margin-top:40px;background:#fff;border-radius:22px;padding:36px;box-shadow:0 14px 40px rgba(16,18,21,.08)}
+.quiz.show{display:block}
+.quiz{scroll-margin-top:84px}
+.cta-sm{display:none}@media (max-width:520px){.cta-lg{display:none}.cta-sm{display:inline}}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qtop .lvl{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qtop button{font:inherit;font-size:14px;font-weight:600;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:8px 0}
+.prog{height:8px;border-radius:99px;background:var(--paper);overflow:hidden;margin:14px 0 26px}
+.prog > div{height:100%;background:var(--red);border-radius:99px;transition:width .4s}
+.qnum{font-size:14px;font-weight:700;color:var(--red);margin:0 0 6px}
+.qtext{margin:0 0 22px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.05;text-transform:uppercase}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{font:inherit;text-align:left;font-size:17px;line-height:1.4;padding:16px 18px;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s,background .2s}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt .k{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.opt:disabled{cursor:default}
+.expl{display:none;margin-top:18px;padding:18px 20px;border-radius:12px;background:var(--paper);line-height:1.6}
+.expl.show{display:block}
+.expl strong{display:block;margin-bottom:4px}
+.next{margin-top:18px;display:none;font:inherit;font-size:16px;font-weight:700;height:54px;padding:0 26px;border-radius:10px;border:0;background:var(--ink);color:#fff;cursor:pointer}
+.next.show{display:inline-flex;align-items:center}
+.result{display:none;text-align:center;flex-direction:column;align-items:center;gap:16px;padding:10px 0}
+.result.show{display:flex}
+.score{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:96px;line-height:1;color:var(--red)}
+.result h2{margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:40px;text-transform:uppercase}
+.result p{margin:0;max-width:560px;color:var(--muted);line-height:1.6;font-size:17px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:6px}
+.btn{font:inherit;font-size:16px;font-weight:700;padding:16px 22px;border-radius:10px;border:0;cursor:pointer;background:var(--red);color:#fff}
+.btn.dark{background:var(--ink)}
+.btn.line{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.note{margin-top:28px;font-size:14px;line-height:1.6;color:var(--muted);padding:16px 18px;border-radius:12px;background:#fff;border-left:4px solid var(--yel)}
+footer{background:#0A0B0D;color:#8F959D;font-size:13px}
+footer div{max-width:1080px;margin:0 auto;padding:28px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.pv-badge{position:fixed;left:16px;bottom:16px;z-index:60;background:var(--yel);color:var(--ink);font:700 13px 'Barlow',sans-serif;padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+@media (prefers-reduced-motion:no-preference){.quiz.show,.result.show{animation:in .45s cubic-bezier(.2,.7,.2,1)}@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}}
+@media (max-width:600px){.quiz{padding:24px 18px}.opt{font-size:16px}}
+</style>
+</head>
+<body>
+<header id="hd">
+<nav class="nav" aria-label="Główna nawigacja">
+<a href="index.html"><img src="img/logo-poziome-ciemne.svg" alt="Fundacja KONOR-KŁAD-MEDYK"></a>
+<div class="links">
+<a href="index.html#misja">Co robimy</a>
+<a href="index.html#potrzeby">Czego potrzebujemy</a>
+<a href="index.html#szkolenia">Szkolenia</a>
+<a href="index.html#dla-firm">Dla firm</a>
+<a href="index.html#zespol">Zespół</a>
+<a href="index.html#dolacz">Dołącz</a>
+<a href="quiz.html" aria-current="page">Quiz</a>
+<a href="index.html#napisz">Kontakt</a>
+</div>
+<a class="cta" href="index.html#wsparcie"><span class="cta-lg">Wesprzyj fundację</span><span class="cta-sm">Wesprzyj</span></a>
+<button type="button" class="burger" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-in">
+<p class="eyebrow">Quiz z pierwszej pomocy</p>
+<h1>Czy wiesz, jak uratować życie?</h1>
+<p class="lead">Wyjaśnienie po każdej odpowiedzi i wynik na końcu. Wybierz poziom: dla dzieci, dla dorosłych albo dla firm i nauczycieli.</p>
+</div>
+</section>
+
+<main>
+<div class="levels" id="levels">
+<button type="button" class="level kids" data-level="kids">
+<span class="tag">Szkoła podstawowa</span>
+<h2>Dla dzieci</h2>
+<p>Proste sytuacje z codzienności: telefon 112, skaleczenie, oparzenie, krew z nosa.</p>
+<span class="go">Zaczynam →</span>
+</button>
+<button type="button" class="level" data-level="adults">
+<span class="tag">Młodzież i dorośli</span>
+<h2>Dla dorosłych</h2>
+<p>Resuscytacja dorosłych, dzieci i niemowląt, AED, zadławienie i krwotok – według wytycznych resuscytacji.</p>
+<span class="go">Zaczynam →</span>
+</button>
+<button type="button" class="level pro" data-level="pro">
+<span class="tag">Miejsce pracy i szkoła</span>
+<h2>Dla firm i nauczycieli</h2>
+<p>Zawał, udar, drgawki, cukrzyca, alergia, porażenie prądem – sytuacje, które zdarzają się w pracy i w szkole.</p>
+<span class="go">Zaczynam →</span>
+</button>
+</div>
+
+<section class="quiz" id="quiz" aria-live="polite">
+<div id="qbox">
+<div class="qtop"><span class="lvl" id="qlvl"></span><button type="button" id="qback">Zmień poziom</button></div>
+<div class="prog"><div id="qprog" style="width:0"></div></div>
+<p class="qnum" id="qnum"></p>
+<h2 class="qtext" id="qtext"></h2>
+<div class="opts" id="opts"></div>
+<div class="expl" id="expl"></div>
+<button type="button" class="next" id="next">Dalej →</button>
+</div>
+<div class="result" id="result">
+<div class="score" id="score"></div>
+<h2 id="rtitle"></h2>
+<p id="rtext"></p>
+<div class="btns">
+<a class="btn" href="index.html#szkolenie">Zamów szkolenie</a>
+<a class="btn dark" href="index.html#wsparcie">Wesprzyj fundację</a>
+<button type="button" class="btn line" id="again">Spróbuj jeszcze raz</button>
+</div>
+</div>
+</section>
+
+<p class="note"><strong>Ważne:</strong> quiz ma charakter edukacyjny i nie zastępuje szkolenia z pierwszej pomocy. W nagłym wypadku dzwoń pod numer alarmowy <strong>112</strong>. [Treść pytań do weryfikacji przez ratownika fundacji przed publikacją.]</p>
+</main>
+
+<footer><div><span>© 2026 Fundacja Konor-Kład-Medyk · KRS 0001254244 · NIP 5223379275</span><span>RATUJEMY · POMAGAMY · SZKOLIMY</span></div></footer>
+
+
+<script>
+var Q={
+kids:{name:'Dla dzieci',q:[
+{t:'Pod jaki numer dzwonisz, gdy ktoś potrzebuje pomocy?',o:['112','111','123','Do kolegi z klasy'],a:0,e:'112 to europejski numer alarmowy. Działa w całej Polsce, za darmo, także z telefonu bez środków na koncie.'},
+{t:'Co jest najważniejsze, gdy rozmawiasz z dyspozytorem?',o:['Szybko powiedzieć „pomocy” i się rozłączyć','Powiedzieć, gdzie jesteś i co się stało – i nie rozłączać się pierwszy','Zapytać, kiedy przyjedzie karetka','Podać swoją ulubioną grę'],a:1,e:'Dyspozytor musi wiedzieć, gdzie jesteś i co się stało. Rozłącz się dopiero wtedy, gdy on Ci na to pozwoli – może jeszcze powiedzieć, co robić.'},
+{t:'Widzisz, że ktoś leży na ulicy. Co robisz najpierw?',o:['Biegnę na środek ulicy','Sprawdzam, czy jest bezpiecznie – i wołam dorosłego','Robię zdjęcie telefonem','Udaję, że nie widzę'],a:1,e:'Najpierw Twoje bezpieczeństwo – nie wbiegaj na jezdnię. Zawołaj dorosłego albo zadzwoń pod 112.'},
+{t:'Jak sprawdzić, czy ktoś jest przytomny?',o:['Głośno zapytać „Czy wszystko w porządku?” i delikatnie potrząsnąć za ramiona','Polać go zimną wodą','Szczypać mocno w nos','Czekać, aż sam wstanie'],a:0,e:'Głośno zapytaj i delikatnie potrząśnij za ramiona. Jeśli ktoś nie reaguje – wołaj o pomoc i dzwoń pod 112.'},
+{t:'Kolega oparzył rękę gorącą herbatą. Co robisz?',o:['Smaruję masłem','Przykładam lód prosto na skórę','Polewam oparzone miejsce chłodną wodą z kranu','Zaklejam plastrem'],a:2,e:'Oparzenie chłodzimy chłodną (nie lodowatą) bieżącą wodą aż do przyjazdu karetki. Zawołaj dorosłego, który wezwie pomoc. Nie smarujemy masłem ani kremem i nie przykładamy lodu.'},
+{t:'Koleżance leci krew z nosa. Co powinna zrobić?',o:['Odchylić głowę do tyłu','Pochylić głowę do przodu i ucisnąć miękką część nosa','Położyć się na plecach','Mocno wydmuchać nos'],a:1,e:'Głowa lekko do przodu – krew nie spływa do gardła. Ucisk miękkiej części nosa przez około 10 minut zwykle zatrzymuje krwawienie.'},
+{t:'Ktoś zakrztusił się jedzeniem, ale głośno kaszle. Co robisz?',o:['Daję mu szybko coś do picia','Zachęcam, żeby dalej mocno kaszlał','Każę mu się położyć','Wkładam mu palce do buzi'],a:1,e:'Jeśli ktoś kaszle, jego organizm sam próbuje usunąć przeszkodę. Zachęcaj do kaszlu i zawołaj dorosłego. Gdy przestaje kaszleć lub oddychać – dzwoń 112.'},
+{t:'Kolega się skaleczył i leci mu krew. Co robisz?',o:['Uciskam ranę czystym opatrunkiem lub chusteczką','Myję ranę błotem z placu zabaw','Zostawiam tak, samo przejdzie','Dmucham w ranę'],a:0,e:'Ucisk czystym opatrunkiem zatrzymuje krwawienie. Zawołaj dorosłego – jeśli rana jest duża, trzeba zadzwonić pod 112.'},
+{t:'Co to jest AED?',o:['Rodzaj plastra','Urządzenie, które pomaga przywrócić prawidłowe bicie serca i samo mówi, co robić','Lekarstwo na ból głowy','Aplikacja do gier'],a:1,e:'AED to automatyczny defibrylator. Wydaje polecenia głosem – może go użyć każdy, nawet bez szkolenia. Szukaj zielonego znaku z sercem i błyskawicą.'},
+{t:'Kolega spadł z huśtawki, mocno boli go noga i nie może nią ruszać. Co robisz?',o:['Każę mu wstać i chodzić','Ciągnę za nogę, żeby ją wyprostować','Zostawiam nogę w spokoju i wołam dorosłego','Niosę go sam do domu'],a:2,e:'Noga może być złamana. Nie ruszaj nią, nie pozwól chodzić. Zawołaj dorosłego, który wezwie pomoc.'}
+]},
+adults:{name:'Dla dorosłych',q:[
+{t:'Widzisz nieruchomo leżącego mężczyznę. Co robisz najpierw?',o:['Od razu zaczynam uciskanie klatki piersiowej','Upewniam się, że miejsce jest bezpieczne dla mnie i poszkodowanego','Podaję mu wodę','Przekręcam go na brzuch'],a:1,e:'Pierwszy krok to zawsze ocena bezpieczeństwa. Martwy ratownik nikomu nie pomoże – sprawdź ruch uliczny, prąd, ogień, gaz.'},
+{t:'Jak sprawdzić, czy poszkodowany oddycha prawidłowo?',o:['Sprawdzić tętno na nadgarstku przez minutę','Udrożnić drogi oddechowe i przez maksymalnie 10 sekund patrzeć, słuchać i wyczuwać oddech','Przyłożyć lusterko do ust','Zapytać świadków'],a:1,e:'Odchyl głowę i unieś żuchwę, a potem przez maks. 10 sekund oceń oddech. Pojedyncze, rzadkie „westchnięcia” to nie jest prawidłowy oddech – traktuj je jak jego brak.'},
+{t:'Jaki jest ogólnoeuropejski numer alarmowy?',o:['997','998','112','911'],a:2,e:'112 działa w całej Unii Europejskiej. 997 to policja, 998 – straż pożarna, a 911 to numer amerykański.'},
+{t:'Poszkodowany nie reaguje i nie oddycha prawidłowo. Co robisz?',o:['Układam go w pozycji bocznej i czekam','Wzywam pomoc (112, prośba o AED) i od razu zaczynam RKO: 30 uciśnięć i 2 oddechy','Podaję mu leki','Czekam, aż odzyska przytomność'],a:1,e:'Wezwij 112 (najlepiej na głośniku) i poproś kogoś o przyniesienie AED. Natychmiast rozpocznij resuscytację: 30 uciśnięć klatki piersiowej, 2 oddechy ratownicze. Jeśli nie umiesz lub nie chcesz robić oddechów – uciskaj bez przerwy.'},
+{t:'Z jaką częstotliwością uciskać klatkę piersiową dorosłego?',o:['60–80 razy na minutę','100–120 razy na minutę','140–160 razy na minutę','Tak szybko, jak się da'],a:1,e:'100–120 uciśnięć na minutę – mniej więcej w rytmie piosenki „Stayin’ Alive”. Pozwól klatce w pełni się unieść po każdym ucisku.'},
+{t:'Na jaką głębokość uciskać klatkę piersiową dorosłego?',o:['1–2 cm','3–4 cm','5–6 cm','Ponad 10 cm'],a:2,e:'5–6 cm, na środku klatki piersiowej (dolna połowa mostka), wyprostowanymi rękami. Zbyt płytkie uciski są nieskuteczne.'},
+{t:'Kiedy użyć AED?',o:['Tylko gdy na miejscu jest lekarz','Jak najszybciej, gdy poszkodowany nie reaguje i nie oddycha prawidłowo','Dopiero po 10 minutach RKO','U każdej osoby, która źle się czuje'],a:1,e:'Włącz AED, gdy tylko jest dostępne, i wykonuj polecenia głosowe. Urządzenie samo oceni rytm serca i nie pozwoli wykonać zbędnego wyładowania.'},
+{t:'Kiedy układamy poszkodowanego w pozycji bezpiecznej (bocznej ustalonej)?',o:['Gdy jest nieprzytomny, ale oddycha prawidłowo','Gdy nie oddycha','Gdy jest przytomny i rozmawia','Zawsze przy złamaniu nogi'],a:0,e:'Pozycja boczna chroni drogi oddechowe nieprzytomnej osoby, która oddycha. Regularnie sprawdzaj oddech – jeśli ustanie, zacznij RKO.'},
+{t:'Dorosły się dławi, nie może mówić ani kaszleć. Co robisz?',o:['Podaję wodę do picia','Wykonuję 5 uderzeń między łopatki, a potem 5 uciśnięć nadbrzusza – i powtarzam','Kładę go na plecach','Czekam, aż samo przejdzie'],a:1,e:'Pochyl poszkodowanego do przodu i wykonaj do 5 uderzeń między łopatki. Jeśli nie pomaga – do 5 uciśnięć nadbrzusza (rękoczyn Heimlicha). Gdy straci przytomność – wezwij 112 i zacznij RKO.'},
+{t:'Z rany na przedramieniu mocno płynie krew. Co robisz najpierw?',o:['Polewam ranę wodą utlenioną','Mocno uciskam ranę bezpośrednio opatrunkiem','Unoszę rękę i czekam','Smaruję ranę maścią'],a:1,e:'Bezpośredni, mocny ucisk rany to podstawa. Gdy ucisk nie zatrzymuje masywnego krwotoku z kończyny, zastosuj opaskę uciskową (staza) i wezwij 112.'},
+{t:'Dziecko (ok. 4 lata) nie reaguje i nie oddycha prawidłowo. Od czego zaczynasz po udrożnieniu dróg oddechowych?',o:['Od 30 uciśnięć klatki piersiowej','Od 5 oddechów ratowniczych, potem uciśnięcia','Od ułożenia w pozycji bocznej','Od klepania po plecach'],a:1,e:'U dzieci zatrzymanie krążenia najczęściej wynika z niedotlenienia, dlatego zaczynamy od 5 oddechów ratowniczych, a potem uciskamy klatkę piersiową. Jeśli nie znasz schematu dla dzieci – rób RKO jak u dorosłego. Najważniejsze, żeby działać.'},
+{t:'Na jaką głębokość uciskać klatkę piersiową niemowlęcia?',o:['Ok. 1 cm','Ok. 4 cm – jedną trzecią głębokości klatki piersiowej','Ok. 6 cm','Ok. 8 cm'],a:1,e:'U niemowlęcia uciskamy ok. 4 cm, a u starszego dziecka ok. 5 cm – zawsze ok. 1/3 głębokości klatki piersiowej, w dolnej połowie mostka, w tempie 100–120 na minutę.'},
+{t:'Niemowlę się zadławiło – nie może płakać ani kaszleć. Co robisz?',o:['Uciskam nadbrzusze jak u dorosłego (rękoczyn Heimlicha)','Odwracam je do góry nogami i potrząsam','Wykonuję 5 uderzeń w plecy, a potem 5 uciśnięć klatki piersiowej – i powtarzam','Podaję mu wodę'],a:2,e:'Połóż niemowlę na przedramieniu głową w dół i wykonaj do 5 uderzeń między łopatki. Jeśli nie pomaga – odwróć je na plecy i wykonaj do 5 uciśnięć klatki piersiowej. U niemowląt nie uciskamy nadbrzusza. Gdy straci przytomność – 112 i RKO.'}
+]},
+pro:{name:'Dla firm i nauczycieli',q:[
+{t:'Pracownik nagle upada, nie reaguje i nie oddycha prawidłowo. Kto może użyć AED?',o:['Tylko lekarz lub ratownik','Tylko osoba po szkoleniu BHP','Każdy świadek – AED prowadzi głosem krok po kroku','Nikt, trzeba czekać na karetkę'],a:2,e:'AED jest zaprojektowane dla osób bez przygotowania medycznego. Wezwij 112, zacznij RKO i użyj AED, gdy tylko ktoś je przyniesie. Warto, żeby wszyscy wiedzieli, gdzie w budynku wisi AED.'},
+{t:'Kolega skarży się na silny, uciskający ból w klatce piersiowej, który promieniuje do ręki. Co robisz?',o:['Każę mu przejść się po korytarzu','Wzywam 112, sadzam go w wygodnej pozycji i nie zostawiam samego','Daję mu kawę na rozbudzenie','Odwożę go własnym autem do domu'],a:1,e:'To mogą być objawy zawału serca. Wezwij 112, zapewnij spokój i wygodną pozycję (zwykle półsiedzącą), obserwuj oddech. Jeśli przestanie oddychać prawidłowo – zacznij RKO i użyj AED.'},
+{t:'Uczeń ma nagle opadnięty kącik ust, słabość jednej ręki i bełkotliwą mowę. Co to może być i co robisz?',o:['Zmęczenie – niech odpocznie','Udar mózgu – natychmiast dzwonię 112 i zapamiętuję godzinę wystąpienia objawów','Zatrucie – podaję wodę','Żart – ignoruję'],a:1,e:'Opadnięta twarz, osłabienie ręki i zaburzenia mowy to typowe objawy udaru. Liczy się czas: dzwoń 112 i podaj, o której zaczęły się objawy – od tego zależy leczenie.'},
+{t:'Osoba ma napad drgawek. Co robisz?',o:['Przytrzymuję ją mocno, żeby się nie ruszała','Wkładam jej coś do ust, żeby nie przygryzła języka','Chronię jej głowę, odsuwam przedmioty i mierzę czas napadu','Polewam ją zimną wodą'],a:2,e:'Nie przytrzymuj i niczego nie wkładaj do ust. Zabezpiecz głowę, usuń niebezpieczne przedmioty i mierz czas. Po napadzie, gdy oddycha – pozycja boczna. Dzwoń 112, gdy napad trwa ponad 5 minut, powtarza się albo zdarzył się pierwszy raz.'},
+{t:'Pracownik chory na cukrzycę jest blady, spocony i rozkojarzony, ale przytomny i może połykać. Co robisz?',o:['Podaję mu insulinę','Podaję coś słodkiego do picia lub zjedzenia','Każę mu się położyć i nic nie podaję','Podaję mu kawę bez cukru'],a:1,e:'To mogą być objawy niskiego poziomu cukru. Przytomnej osobie, która może połykać, podaj cukier – słodki napój, tabletki z glukozą. Jeśli nie poprawia się lub traci przytomność – 112.'},
+{t:'Osoba uczulona na jad owadów po użądleniu ma duszność i obrzęk twarzy. Co robisz?',o:['Wzywam 112 i pomagam jej użyć jej autostrzykawki z adrenaliną','Przykładam lód i czekam','Podaję wodę z cytryną','Każę jej się położyć i zasnąć'],a:0,e:'To może być wstrząs anafilaktyczny – stan zagrożenia życia. Wezwij 112. Jeśli osoba ma przy sobie autostrzykawkę z adrenaliną, pomóż jej ją użyć (w udo, nawet przez ubranie).'},
+{t:'Pracownik zbladł i mówi, że zaraz zemdleje. Co robisz?',o:['Każę mu szybko wyjść na zewnątrz','Pomagam mu usiąść lub się położyć, żeby nie upadł','Daję mu coś mocnego do picia','Zostawiam go, samo przejdzie'],a:1,e:'Pomóż usiąść lub położyć się – upadek bywa groźniejszy niż samo omdlenie. Leżącemu można unieść nogi. Jeśli straci przytomność i nie wraca do siebie – sprawdź oddech i dzwoń 112.'},
+{t:'Pracownik poraził się prądem i nadal dotyka urządzenia. Co robisz najpierw?',o:['Odciągam go gołymi rękami','Odłączam zasilanie (wyłącznik, bezpiecznik) – dopiero potem podchodzę','Polewam go wodą','Czekam, aż sam puści'],a:1,e:'Najpierw Twoje bezpieczeństwo: odłącz prąd. Dopiero wtedy oceń przytomność i oddech, wezwij 112, a w razie potrzeby zacznij RKO i użyj AED.'},
+{t:'Pracownik spadł z drabiny i nie czuje nóg. Co robisz?',o:['Pomagam mu wstać i usiąść na krześle','Nie ruszam go, stabilizuję głowę i wzywam 112','Przenoszę go do innego pomieszczenia','Masuję mu nogi'],a:1,e:'Może to być uraz kręgosłupa. Nie przemieszczaj poszkodowanego, chyba że grozi mu niebezpieczeństwo. Unieruchom głowę w zastanej pozycji i wezwij 112. Jeśli przestanie oddychać prawidłowo – RKO ma pierwszeństwo.'},
+{t:'Czy w Polsce masz obowiązek udzielić pierwszej pomocy?',o:['Nie, to tylko dobra wola','Tak – za nieudzielenie pomocy osobie w niebezpieczeństwie utraty życia grozi do 3 lat więzienia','Tylko jeśli jesteś lekarzem','Tylko w pracy'],a:1,e:'Kodeks karny (art. 162) przewiduje karę za nieudzielenie pomocy, jeśli możesz to zrobić bez narażania siebie. Wezwanie 112 to też udzielenie pomocy.'}
+]}
+};
+var st={lvl:null,i:0,pts:0};
+var $=function(i){return document.getElementById(i)};
+function start(l){st={lvl:l,i:0,pts:0};$('levels').style.display='none';$('quiz').classList.add('show');$('qbox').style.display='block';$('result').classList.remove('show');$('qlvl').textContent=Q[l].name;show();toQuiz()}
+function toQuiz(){$('quiz').scrollIntoView({behavior:'smooth',block:'start'})}
+function show(){var L=Q[st.lvl],q=L.q[st.i];$('qnum').textContent='Pytanie '+(st.i+1)+' z '+L.q.length;$('qtext').textContent=q.t;$('qprog').style.width=(st.i/L.q.length*100)+'%';
+ var o=$('opts');o.innerHTML='';q.o.forEach(function(t,k){var b=document.createElement('button');b.type='button';b.className='opt';b.innerHTML='<span class="k">'+'ABCD'[k]+'</span><span></span>';b.lastChild.textContent=t;b.onclick=function(){pick(k)};o.appendChild(b)});
+ $('expl').className='expl';$('next').className='next';}
+function pick(k){var q=Q[st.lvl].q[st.i],bs=[].slice.call(document.querySelectorAll('.opt'));bs.forEach(function(b,j){b.disabled=true;if(j===q.a)b.classList.add('ok');else if(j===k)b.classList.add('bad')});
+ var ok=k===q.a;if(ok)st.pts++;$('expl').innerHTML='<strong>'+(ok?'Dobrze!':'Prawidłowa odpowiedź: '+'ABCD'[q.a])+'</strong>';$('expl').appendChild(document.createTextNode(q.e));$('expl').className='expl show';
+ $('next').textContent=st.i===Q[st.lvl].q.length-1?'Zobacz wynik →':'Dalej →';$('next').className='next show';$('next').focus({preventScroll:true});}
+$('next').onclick=function(){st.i++;if(st.i<Q[st.lvl].q.length)show();else end();toQuiz()};
+function end(){var n=Q[st.lvl].q.length;$('qprog').style.width='100%';$('qbox').style.display='none';$('result').classList.add('show');$('score').textContent=st.pts+'/'+n;
+ var r=st.pts/n;$('rtitle').textContent=r>=.9?'Świetnie!':r>=.6?'Dobry wynik!':'Warto to przećwiczyć';
+ $('rtext').textContent=r>=.9?'Znasz zasady pierwszej pomocy. Teraz najważniejsza jest praktyka – na szkoleniu przećwiczysz RKO i AED na fantomie.':r>=.6?'Masz solidne podstawy. Kilka rzeczy warto powtórzyć – najlepiej na praktycznym szkoleniu.':'Nie martw się – po to jest ten quiz. Zapraszamy na szkolenie: w kilka godzin nauczysz się, jak skutecznie pomóc.';}
+$('again').onclick=function(){start(st.lvl)};
+$('qback').onclick=function(){$('quiz').classList.remove('show');$('levels').style.display='grid'};
+[].forEach.call(document.querySelectorAll('.level'),function(b){b.onclick=function(){start(b.dataset.level)}});
+var hd=$('hd'),bg=document.querySelector('.burger');bg.onclick=function(){var o=hd.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+</script>
+</body>
+</html>
