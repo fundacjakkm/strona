@@ -142,6 +142,10 @@ content:
         type: object
         fields:
           - { name: jednorazowa, label: "Link – wpłata jednorazowa (dowolna kwota)", type: string }
+          - { name: jednorazowa_30, label: "Link – 30 zł jednorazowo", type: string }
+          - { name: jednorazowa_50, label: "Link – 50 zł jednorazowo", type: string }
+          - { name: jednorazowa_100, label: "Link – 100 zł jednorazowo", type: string }
+          - { name: jednorazowa_250, label: "Link – 250 zł jednorazowo", type: string }
           - { name: miesieczna_30, label: "Link – 30 zł miesięcznie", type: string }
           - { name: miesieczna_50, label: "Link – 50 zł miesięcznie", type: string }
           - { name: miesieczna_100, label: "Link – 100 zł miesięcznie", type: string }

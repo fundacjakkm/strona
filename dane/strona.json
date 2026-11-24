@@ -304,6 +304,10 @@
     "miesieczna_50": "https://buy.stripe.com/6oUaEXgQ31VMd2M50Ub7y02",
     "miesieczna_100": "https://buy.stripe.com/28E14n0R5bwm2o8fFyb7y03",
     "miesieczna_250": "https://buy.stripe.com/6oU4gz43hasi2o81OIb7y04",
-    "portal": "https://billing.stripe.com/p/login/8x2fZhczNeIy3sc1OIb7y00"
+    "portal": "https://billing.stripe.com/p/login/8x2fZhczNeIy3sc1OIb7y00",
+    "jednorazowa_30": "https://buy.stripe.com/4gM00j57leIy8Mw50Ub7y05",
+    "jednorazowa_50": "https://buy.stripe.com/00wcN56bpfMCd2MfFyb7y06",
+    "jednorazowa_100": "https://buy.stripe.com/eVqcN5gQ3dEu0g08d6b7y07",
+    "jednorazowa_250": "https://buy.stripe.com/3cI8wPgQ3cAq1k43WQb7y08"
   }
 }

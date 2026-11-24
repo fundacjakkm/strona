@@ -725,20 +725,20 @@ Inna kwota
  })});
 
  /* --- wsparcie --- */
- var PAY={once:'{{js:platnosci.jednorazowa}}',m30:'{{js:platnosci.miesieczna_30}}',m50:'{{js:platnosci.miesieczna_50}}',m100:'{{js:platnosci.miesieczna_100}}',m250:'{{js:platnosci.miesieczna_250}}'};
+ var PAY={once:'{{js:platnosci.jednorazowa}}',o30:'{{js:platnosci.jednorazowa_30}}',o50:'{{js:platnosci.jednorazowa_50}}',o100:'{{js:platnosci.jednorazowa_100}}',o250:'{{js:platnosci.jednorazowa_250}}',m30:'{{js:platnosci.miesieczna_30}}',m50:'{{js:platnosci.miesieczna_50}}',m100:'{{js:platnosci.miesieczna_100}}',m250:'{{js:platnosci.miesieczna_250}}'};
  var ws={f:'once',v:100,cel:''};
  function wsRender(){
   $$('.ws-tab').forEach(function(b){b.classList.toggle('on',b.dataset.f===ws.f)});
   $$('.ws-amt').forEach(function(b){b.classList.toggle('on',+b.dataset.v===ws.v)});
   $('#ws-cta').textContent = ws.f==='monthly' ? 'Wspieram '+ws.v+' zł miesięcznie' : 'Wpłacam '+ws.v+' zł';
-  $('#ws-hint').textContent = ws.f==='monthly' ? 'Płatność kartą raz w miesiącu na bezpiecznej stronie Stripe. Zrezygnujesz w każdej chwili.' : 'Przejdziesz na bezpieczną stronę płatności Stripe. Wpisz tam kwotę '+ws.v+' zł i zapłać BLIK-iem, kartą, Apple Pay lub Google Pay.';
+  $('#ws-hint').textContent = ws.f==='monthly' ? 'Płatność kartą raz w miesiącu na bezpiecznej stronie Stripe. Zrezygnujesz w każdej chwili.' : (PAY['o'+ws.v] ? 'Przejdziesz na bezpieczną stronę płatności Stripe i zapłacisz '+ws.v+' zł BLIK-iem, kartą, Apple Pay lub Google Pay.' : 'Przejdziesz na bezpieczną stronę płatności Stripe. Wpisz tam kwotę '+ws.v+' zł i zapłać BLIK-iem, kartą, Apple Pay lub Google Pay.');
   $('#ws-note').classList.remove('show');
  }
  $$('.ws-tab').forEach(function(b){b.addEventListener('click',function(){ws.f=b.dataset.f;wsRender()})});
  $$('.ws-amt').forEach(function(b){b.addEventListener('click',function(){ws.v=+b.dataset.v;$('#ws-other').value='';wsRender()})});
  $('#ws-other').addEventListener('input',function(e){var v=parseInt(e.target.value.replace(/\D/g,''),10); if(v>0){ws.v=v;wsRender()}});
  $('#ws-cta').addEventListener('click',function(){
-  var url = ws.f==='monthly' ? PAY['m'+ws.v] : PAY.once;
+  var url = ws.f==='monthly' ? PAY['m'+ws.v] : (PAY['o'+ws.v] || PAY.once);
   if(!url){ $('#ws-note').classList.add('show'); return; }
   var ref=(ws.cel||'dzialalnosc').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ł/g,'l').replace(/Ł/g,'L').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);
   window.location.href = url + '?locale=pl&client_reference_id=' + encodeURIComponent(ref);
