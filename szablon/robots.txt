@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /dziekujemy.html
+Disallow: /dziekujemy-za-wplate.html
 
 Sitemap: https://fundacjakkm.pl/sitemap.xml

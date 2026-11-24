@@ -620,7 +620,8 @@ Inna kwota
 <input id="ws-other" class="m-in" type="text" inputmode="numeric" placeholder="Wpisz kwotę">
 </label>
 <button type="button" id="ws-cta" class="m-btn">Wpłacam 100 zł</button>
-<div id="ws-note" class="ws-note">Płatności online (BLIK, karta, Apple Pay, Google Pay) uruchomimy już wkrótce. Do tego czasu prosimy o zwykły przelew – dane są poniżej.</div>
+<p id="ws-hint" style="margin:-4px 0 0;font-size:13px;line-height:1.5;color:#4D535C"></p>
+<div id="ws-note" class="ws-note">Wpłaty co miesiąc przyjmujemy w kwotach 30, 50, 100 lub 250 zł. Wybierz jedną z nich albo przekaż dowolną kwotę jednorazowo.</div>
 <div class="ws-transfer">
 <span class="lbl">Albo zwykły przelew</span>
 <div class="copy-row"><span><span class="lbl" style="display:block">Numer konta</span><strong>{{kontakt.konto}}</strong></span><button type="button" class="copy-btn" data-copy="{{kontakt.konto_cyfry}}">Kopiuj</button></div>
@@ -628,6 +629,7 @@ Inna kwota
 <span style="font-size:13px;color:#4D535C">Odbiorca: Fundacja Konor-Kład-Medyk, {{kontakt.adres_ulica}}, {{kontakt.adres_miasto}}</span>
 </div>
 <p style="margin:0;font-size:13px;color:#4D535C">Wpłacając, akceptujesz <a href="regulamin-wplat.html" target="_blank" style="color:#B3121D">Regulamin wpłat</a>. Dane przetwarzamy zgodnie z <a href="polityka-prywatnosci.html" target="_blank" style="color:#B3121D">Polityką prywatności</a>.</p>
+<p style="margin:0;font-size:13px;color:#4D535C">Masz już wpłatę miesięczną? <a href="{{platnosci.portal}}" target="_blank" rel="noopener" style="color:#B3121D">Zarządzaj nią lub zrezygnuj</a>.</p>
 </div>
 </dialog>
 
@@ -723,18 +725,26 @@ Inna kwota
  })});
 
  /* --- wsparcie --- */
- var ws={f:'once',v:100};
+ var PAY={once:'{{js:platnosci.jednorazowa}}',m30:'{{js:platnosci.miesieczna_30}}',m50:'{{js:platnosci.miesieczna_50}}',m100:'{{js:platnosci.miesieczna_100}}',m250:'{{js:platnosci.miesieczna_250}}'};
+ var ws={f:'once',v:100,cel:''};
  function wsRender(){
   $$('.ws-tab').forEach(function(b){b.classList.toggle('on',b.dataset.f===ws.f)});
   $$('.ws-amt').forEach(function(b){b.classList.toggle('on',+b.dataset.v===ws.v)});
   $('#ws-cta').textContent = ws.f==='monthly' ? 'Wspieram '+ws.v+' zł miesięcznie' : 'Wpłacam '+ws.v+' zł';
+  $('#ws-hint').textContent = ws.f==='monthly' ? 'Płatność kartą raz w miesiącu na bezpiecznej stronie Stripe. Zrezygnujesz w każdej chwili.' : 'Przejdziesz na bezpieczną stronę płatności Stripe. Wpisz tam kwotę '+ws.v+' zł i zapłać BLIK-iem, kartą, Apple Pay lub Google Pay.';
+  $('#ws-note').classList.remove('show');
  }
  $$('.ws-tab').forEach(function(b){b.addEventListener('click',function(){ws.f=b.dataset.f;wsRender()})});
  $$('.ws-amt').forEach(function(b){b.addEventListener('click',function(){ws.v=+b.dataset.v;$('#ws-other').value='';wsRender()})});
  $('#ws-other').addEventListener('input',function(e){var v=parseInt(e.target.value.replace(/\D/g,''),10); if(v>0){ws.v=v;wsRender()}});
- $('#ws-cta').addEventListener('click',function(){$('#ws-note').classList.add('show')});
+ $('#ws-cta').addEventListener('click',function(){
+  var url = ws.f==='monthly' ? PAY['m'+ws.v] : PAY.once;
+  if(!url){ $('#ws-note').classList.add('show'); return; }
+  var ref=(ws.cel||'dzialalnosc').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ł/g,'l').replace(/Ł/g,'L').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);
+  window.location.href = url + '?locale=pl&client_reference_id=' + encodeURIComponent(ref);
+ });
  function wsparcie(cel,opt){
-  opt=opt||{}; ws.f=opt.f||'once'; ws.v=opt.v||100; $('#ws-other').value='';
+  opt=opt||{}; ws.f=opt.f||'once'; ws.v=opt.v||100; ws.cel=cel||''; $('#ws-other').value='';
   $('#ws-title').textContent=cel||'Działalność fundacji';
   $('#ws-desc').textContent=opt.desc||'{{js:wplaty.opis}}';
   $('#ws-tytul').textContent='Darowizna – '+(cel||'cele statutowe');

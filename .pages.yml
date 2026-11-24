@@ -136,3 +136,14 @@ content:
           - { name: konto, label: Numer konta (ze spacjami), type: string }
           - { name: adres_ulica, label: Adres – ulica, type: string }
           - { name: adres_miasto, label: Adres – kod i miasto, type: string }
+
+      - name: platnosci
+        label: Płatności online (linki Stripe)
+        type: object
+        fields:
+          - { name: jednorazowa, label: "Link – wpłata jednorazowa (dowolna kwota)", type: string }
+          - { name: miesieczna_30, label: "Link – 30 zł miesięcznie", type: string }
+          - { name: miesieczna_50, label: "Link – 50 zł miesięcznie", type: string }
+          - { name: miesieczna_100, label: "Link – 100 zł miesięcznie", type: string }
+          - { name: miesieczna_250, label: "Link – 250 zł miesięcznie", type: string }
+          - { name: portal, label: "Link – zarządzanie wpłatą miesięczną", type: string }

@@ -297,5 +297,13 @@
     "konto": "55 1140 2004 0000 3102 8688 2353",
     "adres_ulica": "ul. Lazurowa 181 lok. 15",
     "adres_miasto": "01-479 Warszawa"
+  },
+  "platnosci": {
+    "jednorazowa": "https://buy.stripe.com/8x2fZhczNeIy3sc1OIb7y00",
+    "miesieczna_30": "https://buy.stripe.com/bJe14narF7g67Is8d6b7y01",
+    "miesieczna_50": "https://buy.stripe.com/6oUaEXgQ31VMd2M50Ub7y02",
+    "miesieczna_100": "https://buy.stripe.com/28E14n0R5bwm2o8fFyb7y03",
+    "miesieczna_250": "https://buy.stripe.com/6oU4gz43hasi2o81OIb7y04",
+    "portal": "https://billing.stripe.com/p/login/8x2fZhczNeIy3sc1OIb7y00"
   }
 }
