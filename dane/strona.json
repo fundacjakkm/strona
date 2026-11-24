@@ -25,8 +25,8 @@
     "karty": [
       {
         "tytul": "Pojazdy ratownicze",
-        "zdjecie": "",
-        "opis_zdjecia": "",
+        "zdjecie": "/img/pojazdy-ratownicze.jpg",
+        "opis_zdjecia": "Wizualizacja pojazdów ratowniczych: terenowa karetka, quad z przyczepą na nosze i samochód techniczny",
         "zdjecie_w_calosci": false,
         "pozycje": [
           "Specjalistyczna karetka kontenerowa",
@@ -34,7 +34,8 @@
           "Quad do ratownictwa w trudnym terenie",
           "Samochód do ratownictwa wysokościowego i nurkowego",
           "Samochód techniczny"
-        ]
+        ],
+        "podpis_zdjecia": "Wizualizacja"
       },
       {
         "tytul": "Ratownictwo wodne",
@@ -44,7 +45,8 @@
         "pozycje": [
           "Specjalistyczny skuter do ratownictwa wodnego",
           "Samochód techniczny ratownictwa wodnego"
-        ]
+        ],
+        "podpis_zdjecia": ""
       },
       {
         "tytul": "Sprzęt do resuscytacji",
@@ -56,7 +58,8 @@
           "Monitor Corpuls do resuscytacji",
           "Respirator tlenowy",
           "Defibrylatory AED"
-        ]
+        ],
+        "podpis_zdjecia": ""
       },
       {
         "tytul": "Plecaki ratownicze",
@@ -68,7 +71,8 @@
           "Zestawy tlenowe",
           "Wyposażenie do zabezpieczania urazów",
           "Materiały jednorazowego użytku"
-        ]
+        ],
+        "podpis_zdjecia": ""
       },
       {
         "tytul": "Sprzęt szkoleniowy",
@@ -79,7 +83,8 @@
           "Fantomy do nauki resuscytacji",
           "Przekroje i manekiny do szkoleń",
           "Materiały do zajęć w szkołach i przedszkolach"
-        ]
+        ],
+        "podpis_zdjecia": ""
       }
     ]
   },
@@ -218,20 +223,25 @@
       "Lekki kontener – prawo jazdy kat. B",
       "Zgodność z normą PN-EN 1789",
       "3–4 miejsca: kierowca i zespół medyczny"
-    ]
+    ],
+    "podpis_zdjecia": "",
+    "wnetrze_zdjecie": "",
+    "wnetrze_opis": "",
+    "wnetrze_podpis": ""
   },
   "szkolenia": {
     "tytul": "Pierwsza pomoc od przedszkola",
     "opis": "Prowadzimy kursy pierwszej pomocy i kwalifikowanej pierwszej pomocy (KPP), szkolenia z ratownictwa specjalistycznego i zarządzania kryzysowego. Ćwiczymy w realnych warunkach – w mieście, w lesie i na wodzie. Najbardziej zależy nam na dzieciach i młodzieży. Koszt szkolenia ustalamy indywidualnie – w formie wpłaty na cele fundacji.",
-    "zdjecie": "/img/szkolenia-akcja.jpg",
-    "opis_zdjecia": "Ratownicy medyczni udzielają pomocy poszkodowanemu na pomoście przy łodzi ratowniczej",
+    "zdjecie": "/img/szkolenia-dzieci.jpg",
+    "opis_zdjecia": "Ratownik medyczny uczy dzieci resuscytacji na fantomie w szkolnej sali gimnastycznej",
     "grupy": [
       "Szkoły i przedszkola",
       "Pracownicy firm",
       "Funkcjonariusze służb",
       "KPP i ratownictwo specjalistyczne",
       "Pokazy i zawody ratownicze"
-    ]
+    ],
+    "podpis_zdjecia": "Zdjęcie poglądowe"
   },
   "firmy": {
     "tytul": "Przekaż sprzęt albo środki na jego zakup",

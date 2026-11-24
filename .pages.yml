@@ -28,6 +28,10 @@ content:
           - { name: netto, label: Dopisek pod sumą w wycenie, type: string }
           - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
           - { name: opis_zdjecia, label: "Opis zdjęcia (dla niewidomych i Google)", type: string }
+          - { name: podpis_zdjecia, label: "Podpis na zdjęciu (np. Wizualizacja; puste = bez podpisu)", type: string }
+          - { name: wnetrze_zdjecie, label: "Zdjęcie wnętrza w wycenie (puste = brak)", type: image, options: { media: zdjecia } }
+          - { name: wnetrze_opis, label: Opis zdjęcia wnętrza, type: string }
+          - { name: wnetrze_podpis, label: Podpis pod zdjęciem wnętrza, type: string }
           - name: kosztorys
             label: Kosztorys – grupy
             type: object
@@ -82,6 +86,7 @@ content:
               - { name: tytul, label: Tytuł, type: string }
               - { name: zdjecie, label: "Zdjęcie (puste = ikona)", type: image, options: { media: zdjecia } }
               - { name: opis_zdjecia, label: Opis zdjęcia, type: string }
+              - { name: podpis_zdjecia, label: "Podpis na zdjęciu (np. Wizualizacja)", type: string }
               - { name: zdjecie_w_calosci, label: "Pokaż zdjęcie w całości, bez przycinania (np. zdjęcie produktu)", type: boolean }
               - { name: pozycje, label: Lista, type: string, list: true }
 
@@ -94,6 +99,7 @@ content:
           - { name: grupy, label: Dla kogo (etykiety), type: string, list: true }
           - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
           - { name: opis_zdjecia, label: Opis zdjęcia, type: string }
+          - { name: podpis_zdjecia, label: "Podpis na zdjęciu (np. Zdjęcie poglądowe)", type: string }
 
       - name: firmy
         label: Dla firm
