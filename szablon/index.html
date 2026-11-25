@@ -586,16 +586,21 @@ Inna kwota
 
 <script>
 (function(){
-  var freq='once', amount=100;
+  var freq='once', amount=100, MIN=5, MAX=99999;
+  var inp=document.querySelector('#wesprzyj input');
   function render(){
     document.querySelectorAll('.tab').forEach(function(b){b.classList.toggle('on',b.dataset.freq===freq)});
     document.querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',+b.dataset.amount===amount)});
-    document.getElementById('cta-label').textContent = freq==='monthly' ? 'Wspieram '+amount+' zł miesięcznie' : 'Wpłacam '+amount+' zł';
+    var l=document.getElementById('cta-label');
+    l.dataset.amount=amount; l.dataset.freq=freq;
+    if(!amount) l.textContent='Wybierz lub wpisz kwotę';
+    else if(amount<MIN) l.textContent='Minimalna kwota to '+MIN+' zł';
+    else if(amount>MAX) l.textContent='Większą kwotę – przelewem';
+    else l.textContent = freq==='monthly' ? 'Wspieram '+amount+' zł miesięcznie' : 'Wpłacam '+amount+' zł';
   }
   document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){freq=b.dataset.freq;render()})});
-  document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){amount=+b.dataset.amount;render()})});
-  var inp=document.querySelector('#wesprzyj input');
-  if(inp) inp.addEventListener('input',function(){var v=parseInt(inp.value.replace(/\D/g,''),10); if(v>0){amount=v;render()}});
+  document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){var a=+b.dataset.amount; amount=(amount===a && !(inp&&inp.value))?0:a; if(inp) inp.value=''; render()})});
+  if(inp) inp.addEventListener('input',function(){var v=parseInt(inp.value.replace(/\D/g,''),10); amount=v>0?v:0; render()});
   render();
   document.querySelectorAll('[data-temat]').forEach(function(a){a.addEventListener('click',function(){var t=document.getElementById('temat'); if(t){t.value=a.dataset.temat;}})});
 })();
@@ -731,18 +736,22 @@ Inna kwota
  function wsRender(){
   $$('.ws-tab').forEach(function(b){b.classList.toggle('on',b.dataset.f===ws.f)});
   $$('.ws-amt').forEach(function(b){b.classList.toggle('on',+b.dataset.v===ws.v)});
-  $('#ws-cta').textContent = ws.f==='monthly' ? 'Wspieram '+ws.v+' zł miesięcznie' : 'Wpłacam '+ws.v+' zł';
-  $('#ws-hint').textContent = ws.f==='monthly' ? 'Płatność kartą raz w miesiącu na bezpiecznej stronie Stripe. Zrezygnujesz w każdej chwili.' : (PAY['o'+ws.v] ? 'Przejdziesz na bezpieczną stronę płatności Stripe i zapłacisz '+ws.v+' zł BLIK-iem, kartą, Apple Pay lub Google Pay.' : 'Przejdziesz na bezpieczną stronę płatności Stripe. Wpisz tam kwotę '+ws.v+' zł i zapłać BLIK-iem, kartą, Apple Pay lub Google Pay.');
-  $('#ws-note').classList.remove('show');
+  var ok = ws.v>=5 && ws.v<=99999;
+  $('#ws-cta').textContent = !ws.v ? 'Wybierz lub wpisz kwotę' : (ws.v<5 ? 'Minimalna kwota to 5 zł' : (ws.v>99999 ? 'Większą kwotę – przelewem' : (ws.f==='monthly' ? 'Wspieram '+ws.v+' zł miesięcznie' : 'Wpłacam '+ws.v+' zł')));
+  $('#ws-hint').textContent = !ok ? '' : (ws.f==='monthly' ? (PAY['m'+ws.v] ? 'Płatność kartą raz w miesiącu na bezpiecznej stronie Stripe. Zrezygnujesz w każdej chwili.' : '') : 'Przejdziesz na bezpieczną stronę płatności Stripe i zapłacisz '+ws.v+' zł BLIK-iem, kartą, Apple Pay lub Google Pay.');
+  $('#ws-note').classList.toggle('show', ok && ws.f==='monthly' && !PAY['m'+ws.v]);
  }
  $$('.ws-tab').forEach(function(b){b.addEventListener('click',function(){ws.f=b.dataset.f;wsRender()})});
- $$('.ws-amt').forEach(function(b){b.addEventListener('click',function(){ws.v=+b.dataset.v;$('#ws-other').value='';wsRender()})});
- $('#ws-other').addEventListener('input',function(e){var v=parseInt(e.target.value.replace(/\D/g,''),10); if(v>0){ws.v=v;wsRender()}});
+ $$('.ws-amt').forEach(function(b){b.addEventListener('click',function(){var v=+b.dataset.v; ws.v=(ws.v===v && !$('#ws-other').value)?0:v; $('#ws-other').value=''; wsRender()})});
+ $('#ws-other').addEventListener('input',function(e){var v=parseInt(e.target.value.replace(/\D/g,''),10); ws.v=v>0?v:0; wsRender()});
  $('#ws-cta').addEventListener('click',function(){
+  if(!ws.v || ws.v<5 || ws.v>99999){ $('#ws-other').focus(); return; }
   var url = ws.f==='monthly' ? PAY['m'+ws.v] : (PAY['o'+ws.v] || PAY.once);
   if(!url){ $('#ws-note').classList.add('show'); return; }
   var ref=(ws.cel||'dzialalnosc').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ł/g,'l').replace(/Ł/g,'L').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);
-  window.location.href = url + '?locale=pl&client_reference_id=' + encodeURIComponent(ref);
+  var q = '?locale=pl&client_reference_id=' + encodeURIComponent(ref);
+  if(ws.f!=='monthly' && !PAY['o'+ws.v]) q += '&prefilled_amount=' + (ws.v*100);
+  window.location.href = url + q;
  });
  function wsparcie(cel,opt){
   opt=opt||{}; ws.f=opt.f||'once'; ws.v=opt.v||100; ws.cel=cel||''; $('#ws-other').value='';
@@ -796,7 +805,7 @@ Inna kwota
    var key=Object.keys(byText).find(function(k){return t===k||t.indexOf(k)===0});
    var fn=byText[key];
    if(!fn && t==='Wesprzyj ten cel'){ var h=a.closest('article').querySelector('h3'); fn=function(){wsparcie(h.textContent.trim())}; }
-   if(!fn && a.closest('#wesprzyj') && a.querySelector('#cta-label')) fn=function(){ var m=($('#cta-label').textContent.match(/\d+/)||[100])[0]; wsparcie('Działalność fundacji',{f:/miesięcznie/.test($('#cta-label').textContent)?'monthly':'once',v:+m}); };
+   if(!fn && a.closest('#wesprzyj') && a.querySelector('#cta-label')) fn=function(){ var l=$('#cta-label'), v=+l.dataset.amount; if(!v||v<5||v>99999){ var i=document.querySelector('#wesprzyj input'); if(i) i.focus(); return; } wsparcie('Działalność fundacji',{f:l.dataset.freq||'once',v:v}); };
    if(fn) a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();fn()});
   });
  }
