@@ -319,5 +319,21 @@
     "jednorazowa_50": "https://buy.stripe.com/00wcN56bpfMCd2MfFyb7y06",
     "jednorazowa_100": "https://buy.stripe.com/eVqcN5gQ3dEu0g08d6b7y07",
     "jednorazowa_250": "https://buy.stripe.com/3cI8wPgQ3cAq1k43WQb7y08"
+  },
+  "misja": {
+    "zdjecia": [
+      {
+        "zdjecie": "/img/akcja-smiglowiec.jpg",
+        "opis": "Ratownicy fundacji ze strażakami przy śmigłowcu Lotniczego Pogotowia Ratunkowego podczas akcji",
+        "podpis": "Wspólna akcja ze służbami i LPR",
+        "kadr": "50% 88%"
+      },
+      {
+        "zdjecie": "/img/szkolenia-akcja.jpg",
+        "opis": "Ratownicy fundacji udzielają pomocy poszkodowanemu na pomoście nad wodą, w folii NRC",
+        "podpis": "Pomoc poszkodowanemu nad wodą",
+        "kadr": "50% 50%"
+      }
+    ]
   }
 }

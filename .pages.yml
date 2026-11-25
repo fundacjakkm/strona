@@ -17,6 +17,23 @@ content:
     path: dane/strona.json
     format: json
     fields:
+      - name: misja
+        label: Co robimy – zdjęcia z akcji
+        type: object
+        fields:
+          - name: zdjecia
+            label: Zdjęcia z akcji (im więcej, tym lepiej)
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{podpis}"
+            fields:
+              - { name: zdjecie, label: Zdjęcie, type: image, options: { media: zdjecia } }
+              - { name: opis, label: "Opis zdjęcia (dla niewidomych i Google)", type: string }
+              - { name: podpis, label: "Podpis pod zdjęciem (puste = bez podpisu)", type: string }
+              - { name: kadr, label: "Kadr (opcjonalnie, np. 50% 80% = pokaż dolną część zdjęcia)", type: string }
+
       - name: karetka
         label: Zbiórka – karetka neonatologiczna
         type: object
