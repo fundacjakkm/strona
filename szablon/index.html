@@ -184,6 +184,20 @@ section[style*="gap: 48px"],[style*="gap: 56px"]{gap:28px!important}
   [style*="height: 380px"]{height:230px!important}
   [style*="min-height: clamp(260px, 62vw, 440px)"]{min-height:210px!important}
 }
+
+/* kosztorys karetki – zwinięty, rozwija się po kliknięciu */
+details.kz>summary::-webkit-details-marker{display:none}
+details.kz>summary h4::after{content:"Pokaż szczegóły \25BE";display:block;margin-top:4px;font-size:13px;font-weight:600;color:#B3121D}
+details.kz[open]>summary h4::after{content:"Zwiń \25B4"}
+details.kz[open]>summary{margin-bottom:14px}
+details.kz{align-self:start}
+/* stały, smuklejszy pasek u góry na telefonie */
+@media (max-width:700px){
+  nav{padding-top:6px!important;padding-bottom:6px!important;min-height:0!important}
+  nav > a:first-child img{height:30px!important}
+  nav > a.nav-cta{padding:8px 13px!important;font-size:13px!important}
+  .nav-burger{width:38px!important;height:38px!important}
+}
 </style>
 </head>
 <body>
@@ -361,17 +375,17 @@ Inna kwota
 {{#karetka.wnetrze_zdjecie}}<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;"><img src="{{karetka.wnetrze_zdjecie}}" alt="{{karetka.wnetrze_opis}}" loading="lazy" style="display: block; width: 100%; height: clamp(220px, 34vw, 420px); object-fit: cover; object-position: 50% 60%; border-radius: 16px;">{{#karetka.wnetrze_podpis}}<figcaption style="font-size: 11px; line-height: 1.4; color: #8F959D; text-align: right;">{{karetka.wnetrze_podpis}}</figcaption>{{/karetka.wnetrze_podpis}}</figure>{{/karetka.wnetrze_zdjecie}}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px;">{{#karetka.kosztorys}}
 
-<div style="border-radius: 16px; background: #F4F3EF; padding: 24px; display: flex; flex-direction: column; gap: 14px;">
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+<details class="kz" style="border-radius: 16px; background: #F4F3EF; padding: 24px; display: block;">
+<summary style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; cursor: pointer; list-style: none;">
 <h4 style="margin: 0; font-size: 18px; font-weight: 700;">{{nazwa}}</h4>
 <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; white-space: nowrap;">{{suma}}</span>
-</div>
+</summary>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">{{#pozycje}}
 
 <li style="display: flex; justify-content: space-between; gap: 14px; font-size: 14px; line-height: 1.4; padding-bottom: 8px; border-bottom: 1px solid #E3E1DB;"><span style="color: #3F454D;">{{nazwa}}</span><strong style="white-space: nowrap;">{{kwota}}</strong></li>{{/pozycje}}
 
 </ul>
-</div>{{/karetka.kosztorys}}
+</details>{{/karetka.kosztorys}}
 
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px;">{{#karetka.cechy}}
