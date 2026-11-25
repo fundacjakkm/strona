@@ -26,7 +26,7 @@
       {
         "tytul": "Pojazdy ratownicze",
         "zdjecie": "/img/pojazdy-ratownicze.jpg",
-        "opis_zdjecia": "Wizualizacja pojazdów ratowniczych: terenowa karetka, quad z przyczepą na nosze i samochód techniczny",
+        "opis_zdjecia": "Wizualizacja pojazdów ratowniczych z logo fundacji: ciężarówka terenowa, pickup, quad z noszami i łódź ratownicza",
         "zdjecie_w_calosci": false,
         "pozycje": [
           "Specjalistyczna karetka kontenerowa",
@@ -35,7 +35,7 @@
           "Samochód do ratownictwa wysokościowego i nurkowego",
           "Samochód techniczny"
         ],
-        "podpis_zdjecia": "Wizualizacja"
+        "podpis_zdjecia": "Wygenerowano przez AI"
       },
       {
         "tytul": "Ratownictwo wodne",
@@ -89,8 +89,8 @@
     ]
   },
   "karetka": {
-    "zdjecie": "/img/akcja-smiglowiec.jpg",
-    "opis_zdjecia": "Ratownicy medyczni przy śmigłowcu ratunkowym podczas akcji",
+    "zdjecie": "/img/karetka-neonatologiczna.jpg",
+    "opis_zdjecia": "Wizualizacja karetki neonatologicznej z logo Fundacji Konor-Kład-Medyk przed szpitalem",
     "tytul": "Karetka neonatologiczna dla dzieci",
     "opis": "Karetka kontenerowa na podwoziu Mercedes-Benz Sprinter z inkubatorem transportowym, dwoma respiratorami i telemedycyną – do bezpiecznego przewozu wcześniaków, noworodków i dzieci.",
     "cel": "1 922 000 zł",
@@ -224,10 +224,10 @@
       "Zgodność z normą PN-EN 1789",
       "3–4 miejsca: kierowca i zespół medyczny"
     ],
-    "podpis_zdjecia": "",
-    "wnetrze_zdjecie": "",
-    "wnetrze_opis": "",
-    "wnetrze_podpis": ""
+    "podpis_zdjecia": "Wygenerowano przez AI",
+    "wnetrze_zdjecie": "/img/karetka-wnetrze.jpg",
+    "wnetrze_opis": "Wizualizacja wnętrza karetki neonatologicznej z inkubatorem transportowym, respiratorem i monitorami",
+    "wnetrze_podpis": "Wygenerowano przez AI"
   },
   "szkolenia": {
     "tytul": "Pierwsza pomoc od przedszkola",
@@ -241,7 +241,7 @@
       "KPP i ratownictwo specjalistyczne",
       "Pokazy i zawody ratownicze"
     ],
-    "podpis_zdjecia": "Zdjęcie poglądowe"
+    "podpis_zdjecia": "Wygenerowano przez AI"
   },
   "firmy": {
     "tytul": "Przekaż sprzęt albo środki na jego zakup",
